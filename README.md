@@ -1,21 +1,24 @@
 # Resanda Portfolio CMS
 
-Futuristic, responsive personal portfolio with a browser-based CMS prototype.
+Production-ready foundation for a futuristic personal portfolio and owner CMS.
+
+## Stack
+
+- Frontend: Next.js 15, React 19, TypeScript, responsive editorial-tech CSS.
+- Backend: Next.js Route Handlers for validated API endpoints.
+- Platform services: Supabase PostgreSQL, Auth (Google), and Storage.
 
 ## Run locally
 
-Open `index.html` in a browser, or use any static server. The Admin button opens the content workspace. Updates are stored in that browser's local storage.
-
-## Production route
-
-This MVP intentionally has no real authentication or database. For the PRD production release, migrate the data module to Supabase (Postgres + Storage) and protect `/admin` through Google OAuth restricted to the owner email. Keep server-side authorization checks on every write, validate HTTPS destinations, and serve only `Published` content to public routes.
-
-## GitHub
-
-The project is initialized as a local Git repository. Connect it to a GitHub repository after creating one in the desired account:
-
 ```bash
-git remote add origin https://github.com/YOUR_USERNAME/resanda-portfolio-cms.git
-git branch -M main
-git push -u origin main
+npm install
+cp .env.example .env.local
+npm run dev
 ```
+
+## Production setup
+
+1. Create a Supabase project and run `supabase/schema.sql` in the SQL editor.
+2. Configure Google OAuth in Supabase Auth, restrict login to `OWNER_EMAIL`, and add the values from `.env.example`.
+3. Replace the seed content in `lib/content.ts` with Supabase read/write queries; retain the server-side status filters so Draft and Hidden items never reach public routes.
+4. Deploy to Vercel. The included `npm run build` completes successfully.

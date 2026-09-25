@@ -1,0 +1,23 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import type {Project} from '@/lib/content';
+
+export function Scene({compact=false}:{compact?:boolean}){
+ return <div className={'anime-scene '+(compact?'compact':'')} aria-hidden="true" data-tilt>
+   <Image src="/images/anime-city.png" alt="" fill sizes="(max-width: 720px) 100vw, 50vw"/>
+   <div className="scene-grid"/><span className="scene-moon">✦</span>
+   <div className="scene-caption"><span>IDEAS IN MOTION</span><b>想像から、実現へ。</b></div>
+   <div className="cube-stage"><div className="cube">{['発想','設計','実行','改善','✦','↗'].map((x,i)=><span key={i} className={'face face-'+i}>{x}</span>)}</div></div>
+ </div>
+}
+export function PageHero({number,kicker,title,accent,description}:{number:string;kicker:string;title:string;accent:string;description:string}){
+ return <section className="page-hero section"><div className="page-heading"><p className="eyebrow">CHAPTER {number} / {kicker}</p><h1>{title}<br/><i>{accent}</i></h1><p className="lead">{description}</p><a className="text-link" href="#chapter-content">Explore this chapter ↓</a></div><Scene/><span className="chapter-number" aria-hidden="true">{number}</span></section>
+}
+export function ProjectVisual({project}:{project:Project}){
+ const kind=project.slug.includes('linehaul')?'logistics':project.slug.includes('beauty')?'learning':'ai';
+ return <div className={'project-art '+kind} aria-hidden="true"><span className="art-label">{kind==='logistics'?'OPERATIONS / CONNECTED':kind==='learning'?'LEARNING / CONNECTED':'IDEAS / EXPLORED'}</span>{kind==='logistics'?<div className="route-map"><span>VENDOR</span><b>→</b><span>FLEET</span><b>→</b><span>HUB</span><div className="moving-train">▰ ▰ ▰</div></div>:kind==='learning'?<div className="learning-stack"><div>ACADEMY <b>✦</b></div><div><span>Learn</span><span>Apply</span><span>Grow</span></div><div className="mini-bars"><b/><b/><b/><b/><b/></div></div>:<div className="ai-graphic"><span className="ai-ring"/><b>問</b><span className="ai-chip">Prompt → Review → Refine</span></div>}<span className="art-stamp">CONCEPT VISUAL</span></div>
+}
+export function ProjectCard({project,index}:{project:Project;index:number}){
+ return <article className="chapter-card" data-tilt><ProjectVisual project={project}/><div className="card-content"><small>0{index+1} / {project.category}</small><h3>{project.title}</h3><p>{project.summary}</p><div className="tags">{project.tags.map(t=><span key={t}>{t}</span>)}</div><Link className="text-link" href={'/projects/'+project.slug}>{project.cta_label} ↗</Link></div></article>
+}
+export function ChapterEnd(){return <section className="chapter-end section"><div><p className="eyebrow">THE NEXT CHAPTER</p><h2>Good things start<br/>with <i>a conversation.</i></h2></div><Link className="primary" href="/contact">Let’s talk ↗</Link></section>}
