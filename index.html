@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Resanda Dezca — Product Management, systems, data, and AI." />
+    <meta property="og:title" content="Resanda Dezca | Product Portfolio" />
+    <meta property="og:description" content="Product systems, data and AI work." />
+    <title>Resanda Dezca — Product Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div><div class="orb orb-a"></div><div class="orb orb-b"></div>
+    <header class="nav"><a class="brand" href="#top">R<span>.</span>D</a><nav><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav><button class="admin-link" id="openAdmin">Admin <span>↗</span></button></header>
+    <main id="top">
+      <section class="hero section"><p class="eyebrow"><i></i> Available for meaningful product challenges</p><h1>Building the systems<br />behind <em>better decisions.</em></h1><p class="hero-copy">I’m Resanda Dezca, a product professional translating complex operations, data, and AI into products people can actually use.</p><div class="cta-row"><a class="button primary" href="#projects">Explore my work <span>→</span></a><a class="button ghost" id="resumeLink" href="#contact">View resume <span>↓</span></a></div><div class="hero-meta"><div><b>Product</b><small>Systems & operations</small></div><div><b>Data & AI</b><small>Insight to action</small></div><div><b>Depok, ID</b><small>Open to collaborate</small></div></div><div class="scroll-note">SCROLL TO EXPLORE <span>↓</span></div></section>
+      <section class="marquee"><div>PRODUCT THINKING <b>✦</b> OPERATIONAL SYSTEMS <b>✦</b> DATA TO DECISIONS <b>✦</b> AI-NATIVE BUILDING <b>✦</b></div></section>
+      <section class="section split" id="about"><p class="section-no">01 / ABOUT</p><div><h2>Less noise.<br /><em>More signal.</em></h2><p class="body-copy">I work at the intersection of business workflows and technology. My approach is simple: get close to the operational friction, define what “better” means, then build a system that makes the right action feel obvious.</p><p class="body-copy">My background spans logistics, enterprise platforms, analytics, and academic AI research—always with the same aim: turn ambiguity into a product teams can trust.</p><a class="text-link" href="#contact">Let’s work together <span>→</span></a></div></section>
+      <section class="section" id="projects"><div class="heading-row"><div><p class="section-no">02 / SELECTED WORK</p><h2>Work with<br /><em>real-world weight.</em></h2></div><a class="text-link" href="#projects">View all projects <span>→</span></a></div><div class="project-grid" id="featuredProjects"></div></section>
+      <section class="section experience" id="experience"><p class="section-no">03 / EXPERIENCE</p><div class="heading-row"><h2>Learning by<br /><em>shipping.</em></h2><p class="side-copy">Cross-functional product work across logistics, consumer technology, enterprise platforms, and data.</p></div><div class="experience-list" id="experienceList"></div></section>
+      <section class="section impact"><p class="section-no">04 / SIGNALS OF IMPACT</p><div class="impact-grid"><div><b>Product × Ops</b><p>Designing workflows that work under operational pressure, not just in a perfect demo.</p></div><div><b>Data-informed</b><p>Connecting fragmented signals into decisions stakeholders can act on.</p></div><div><b>AI-native</b><p>Using AI thoughtfully through discovery, analysis, and product delivery.</p></div></div></section>
+      <section class="section contact" id="contact"><p class="section-no">05 / CONTACT</p><h2>Have a complex<br />problem? <em>Good.</em></h2><p>For product, systems, data, and AI conversations.</p><a class="email" id="emailLink" href="mailto:resanda@example.com">resanda@example.com <span>↗</span></a><div class="social-row"><a id="linkedinLink" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a id="resumeBottom" href="#">Resume ↓</a><span>© 2026 RESANDA DEZCA</span></div></section>
+    </main>
+    <dialog id="adminDialog"><div class="admin-shell"><aside><div class="admin-brand">R.D <span>CMS</span></div><button class="active" data-tab="dashboard">Overview</button><button data-tab="profile">Profile</button><button data-tab="projects">Projects</button><button data-tab="experiences">Experiences</button><button data-tab="settings">Settings</button><div class="aside-bottom"><button id="resetData">Reset demo data</button><button id="closeAdmin">Close admin</button></div></aside><section class="admin-main"><div id="adminContent"></div></section></div></dialog>
+    <template id="projectForm"><form class="edit-form"><label>Title<input name="title" required /></label><label>Summary<textarea name="summary" required></textarea></label><label>Category<input name="category" placeholder="Product Systems" /></label><label>Destination<select name="destination_type"><option>Internal Case Study</option><option>External Website</option><option>Google Drive</option><option>Other URL</option></select></label><label>URL<input name="destination_url" type="url" placeholder="https://..." /></label><label>CTA label<input name="cta_label" value="View case study" /></label><label class="checkbox"><input name="featured" type="checkbox" /> Featured on home</label><label>Status<select name="status"><option>Draft</option><option>Published</option><option>Hidden</option></select></label><button class="button primary" type="submit">Save project →</button></form></template>
+    <script src="app.js"></script>
+  </body>
+</html>
