@@ -1,3 +1,21 @@
-import Link from 'next/link';
-import {Nav,Footer} from '@/components/site-shell';
-export default function NotFound(){return <><Nav/><main id="main-content"><section className="section not-found"><p className="eyebrow">404 / AN UNWRITTEN CHAPTER</p><h1>A small detour.<br/><i>Let’s find your way.</i></h1><p>This page is not here, but there are more stories to explore.</p><Link className="primary" href="/">Back to the beginning ↗</Link></section></main><Footer/></>}
+import Link from "next/link";
+import { WorldNav } from "@/components/world/journey";
+export default function NotFound() {
+  return (
+    <div className="public-world">
+      <WorldNav />
+      <main id="main-content" className="world-section lost-world">
+        <p className="world-eyebrow">404 / UNCHARTED TERRITORY</p>
+        <h1>
+          A different
+          <br />
+          direction.
+        </h1>
+        <p>This page is not here. Your next chapter is.</p>
+        <Link className="world-button" href="/">
+          Return to the journey ↗
+        </Link>
+      </main>
+    </div>
+  );
+}

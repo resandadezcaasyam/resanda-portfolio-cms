@@ -2,3 +2,7 @@
 node_modules/
 .next/
 .env
+.tools/
+data/*.json
+data/*.tmp
+.env.local

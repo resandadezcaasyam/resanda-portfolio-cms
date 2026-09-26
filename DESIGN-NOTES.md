@@ -20,3 +20,5 @@ Scene prompt: Create a panoramic 16:9 Japanese anime background illustration for
 
 ## Verification
 Run `node scripts/verify-ui.cjs` with the app running on port 3000. Browser screenshots are saved to `artifacts/ui/`. Run `npm run build` with the development server stopped to avoid sharing its Next.js build cache.
+
+Verified: production build passed; 14 routes at 320, 390, 768 and 1440 px passed browser checks with no horizontal overflow or page JavaScript errors. Project search and filters, mobile navigation, expandable timeline, CMS new-project form, clipboard copying, and reduced-motion behavior passed. Separate browser checks confirmed changing cube transforms and responsive pointer tilt. Desktop and mobile screenshots were inspected.
